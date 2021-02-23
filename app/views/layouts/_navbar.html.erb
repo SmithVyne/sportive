@@ -1,23 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/articles">Sportive</a>
+    <a class="navbar-brand padding-right " href="/articles"><div>Sportive <span class="after"></span></div></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-            <strong><%= link_to 'Home', articles_path, class: "nav-link active" %></strong>
+        <li class="nav-item main">
+            <strong><%= link_to 'HOME', articles_path, class: "nav-link active orange" %></strong>
         </li>
         <li class="nav-item">
-            <strong><%= link_to 'Matches', articles_path, class: "nav-link" %></strong>
+            <strong><%= link_to 'NEW ARTICLE', new_article_path, class: "nav-link" %></strong>
         </li>
-        <li class="nav-item">
-            <strong><%= link_to 'Players', articles_path, class: "nav-link" %></strong>
-        </li>
-        <li class="nav-item">
-            <strong><%= link_to 'News', articles_path, class: "nav-link" %></strong>
-        </li>
+       
       </ul>
         <ul class="navbar-nav ">
             <% if session[:current_user] != nil %>

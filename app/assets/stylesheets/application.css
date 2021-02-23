@@ -1,0 +1,94 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: #4e443e;
+}
+
+.orange {
+    color: #f76108!important;
+}
+
+a.orange {
+    color: #f76108!important;
+}
+
+.white {
+    color: white!important;
+}
+
+.navbar-brand.white {
+    color: white!important;
+}
+
+.padding-right {
+    padding-right: 40px;
+    font-size: 30px;
+    color: rgb(66, 66, 66)!important;
+    font-weight: 600;
+    width: 250px;
+}
+
+.navbar-brand .after {
+    text-align: right;
+    width: 10px;
+    height: 10px!important;
+    background-color: #f76108;
+    color: #f76108;
+    border-radius: 50%;
+}
+
+.cover {
+    height: 500px;
+    position: relative;
+}
+
+.cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cover-text {
+    position: absolute;
+    bottom: 0;
+    color: white;
+}
+
+.my-card {
+    width: 25%;
+    position: relative;
+}
+
+.my-card-text {
+    position: absolute;
+    top: 0;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.my-card-text h3 {
+    display: inline-block;
+    width: fit-content;
+}
+
+.my-card-cat {
+    border-bottom: #ffff01 3px solid;
+}
+
+.bottombar {
+    color: white;
+}
+
+.bottombar .navbar-brand {
+    color: white;
+}
+
+.vid {
+    height: 400px;
+}
