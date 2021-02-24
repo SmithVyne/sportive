@@ -1,29 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="container w-50 h-100 white">
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="d-flex justify-content-between">
+  <%= link_to '<h2 class="m-0"><i class="fas fa-arrow-left"></i></h2>'.html_safe, articles_path, class:"nav-link btn orange" %>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+  <% if @votee.empty? %>
+    <%= link_to '<h4 class="m-0"><i class="fas fa-caret-square-up"></i></h4><strong><h5>UP VOTE</h5></strong>'.html_safe, "/votes/vote_up/#{@article.id}", method: :get, class:"d-flex flex-column align-items-center nav-link btn orange" %>
+  <% end %>
 
-<p>
-  <strong>Image:</strong>
-  <%= @article.image %>
-</p>
+  <div class="nav-link btn orange"><h4 class="m-0"><i class="fas fa-eye"></i></h4><strong><h5><%= @article.votes.count %> Votes</h5></strong></div>
+</div>
 
-<p>
-  <strong>Author:</strong>
-  <%= @article.author_id %>
-</p>
+<br><br><h1 class="text-center"><strong><%= @article.title.upcase %></strong></h1><br>
 
-<p>
-  <strong>Category:</strong>
-  <%= @article.category_id %>
-</p>
+<%= image_tag "#{@article.image.downcase}", class:"cover-img img-max-height" %>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<br><br><br><br>
+
+<h2><strong>Article:</strong></h2>
+<p><%= @article.text %></p>
+
+
+
+</div><br><br><br><br><br>

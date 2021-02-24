@@ -58,12 +58,4 @@ class ArticleTest < ActiveSupport::TestCase
     article.image = "image.jpg"
     assert_not article.save, "Saved the article without a 20..250 chars title length"
   end
-
-  test "should not save article with text more than 250 chars" do
-    article = Article.new
-    article.author_id = 1
-    article.category_id = 1
-    article.title = "1234567891011hdkjhsdljsaedfl;hasdf;hasdflkahsdfdkjdj"
-    assert_not article.save, "Saved the article without a 20..250 chars title length"
-  end
 end

@@ -115,6 +115,7 @@ a.orange {
 
 .bottombar {
     color: white;
+    background-color: #4e443e;
 }
 
 .bottombar .navbar-brand {
@@ -153,4 +154,8 @@ a.orange {
 
 .text-wrap {
     word-wrap: break-word;
+}
+
+.img-max-height {
+    max-height: 500px;
 }

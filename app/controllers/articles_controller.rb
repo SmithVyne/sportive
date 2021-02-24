@@ -9,6 +9,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1 or /articles/1.json
   def show
+    @id = params[:id]
+    @votee = Vote.where(["user_id = ? AND article_id = ?", "#{session[:current_user]["id"]}", "#{@id}"])
   end
 
   # GET /articles/new
