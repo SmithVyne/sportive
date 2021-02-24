@@ -30,7 +30,7 @@ class VotesController < ApplicationController
     if @vote.empty?
       @vote = u.votes.build(article_id: id)
       if @vote.save
-        redirect_to article_path(id)
+        redirect_to request.referrer
       end
     else
       redirect_to articles_path

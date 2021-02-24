@@ -10,6 +10,10 @@ body {
     color: #f76108!important;
 }
 
+.bg-orange {
+    background-color: #f76108!important;
+}
+
 a.orange {
     color: #f76108!important;
 }
@@ -100,6 +104,13 @@ a.orange {
     text-overflow: ellipsis;
 }
 
+.my-card-textt {
+    width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .my-card-cat {
     display: inline-block;
     width: fit-content;
@@ -149,7 +160,25 @@ a.orange {
 }
 
 .h-100 {
+    min-height: calc(100vh - 150px)!important;
+}
+
+.h-200 {
     height: calc(100vh - 150px)!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
+}
+
+.h-200 section {
+    padding: 20px;
+    background-color: ghostwhite;
+    border-radius: 8px;
+}
+
+.grey {
+    color: #4e4e4e!important;
 }
 
 .text-wrap {
@@ -158,4 +187,52 @@ a.orange {
 
 .img-max-height {
     max-height: 500px;
+}
+
+.text-right {
+    text-align: end;
+}
+
+.divo {
+    display: inline-block;
+    width: fit-content;
+    text-align: center;
+}
+
+.my-card:hover {
+    animation: bigger .3S forwards ease-in;
+    z-index: 1;
+}
+
+.my-card:hover .cover-gradient{
+    background: linear-gradient(135deg, rgba(56, 56, 56, 0.5), rgba(0, 0, 0, 0));
+}
+
+.cover:hover .cover-gradient{
+    background: linear-gradient(135deg, rgba(56, 56, 56, 0.5), rgba(0, 0, 0, 0));
+}
+
+@keyframes bigger {
+    0% {
+        transform:scale(1,1);
+        
+    }
+
+    25% {
+        transform:scale(1.05,1.05);
+    }
+
+    50% {
+        transform:rotate(1deg);
+    }
+
+    75% {
+        transform:scale(1.05,1.05);
+        transform:rotate(-1deg);
+    }
+
+    100% {
+        transform:scale(1,1);
+        
+    }
 }

@@ -6,6 +6,6 @@ class Article < ApplicationRecord
 
     # Validations 
     validates :title, presence: true, length: {in: 6..30}
-    validates :text, presence: true, length: {in: 20..1000}
+    validates :text, presence: true, length: {minimum: 20}
     validates :image, presence: true
 end

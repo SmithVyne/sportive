@@ -30,6 +30,8 @@ class UsersController < ApplicationController
     else
       respond_to do |format|
         if @user.save
+          u = User.find_by(name: "#{@user.name}")
+          session[:current_user] = u
           format.html { redirect_to articles_path, notice: "User was successfully created." }
           format.json { render :show, status: :created, location: articles_path }
         else

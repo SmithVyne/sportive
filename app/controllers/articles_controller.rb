@@ -4,7 +4,15 @@ class ArticlesController < ApplicationController
   # GET /articles or /articles.json
   def index
     @categories = Category.all.order(priority: "asc")
-    # @top_article = Vote.all.order()
+
+    top_count = Vote.group(:article_id).count.map {|art| art[1] }.sort.max
+    count_id_key = Vote.group(:article_id).count.map {|art| [art[1],art[0]] }
+
+    top_id = count_id_key.select { |key_id_pair| key_id_pair[0] == top_count }       
+    
+    @top_article = Article.find(top_id[0][1])
+
+    @random_article = Article.find(rand(Article.all.count))
   end
 
   # GET /articles/1 or /articles/1.json
@@ -16,7 +24,6 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
-    @categories = Category.all
   end
 
   # GET /articles/1/edit
