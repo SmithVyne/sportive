@@ -2,9 +2,11 @@
 
 View articles, categories, create articles and vote them up!
 
-
+### Screenshot
 ![screenshot](screenshot.png)
 
+### Tests
+![screenshot](tests.png)
 
 ## Presentation
 - [Presentation video](https://www.loom.com/share/1bc51aabb4934e97ab2a1290abb45542)
