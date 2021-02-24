@@ -1,25 +1,30 @@
-# The Members-Only
+# Sportive - Capstone project
 
-Create posts to all on the web, but if you want to know who the author is, first sign in the page.
+View articles, categories, create articles and vote them up!
 
 ## About
 
-This project is a simple post creation web.
+This project is a simple article creation web.
 
-It focuses on creating Post with authentications and associations on rails using Active Record.
+It focuses on using Rails ActiveRecord, Validations, Associations, MVC, RSpec testing, Frontend design and using Ruby logic making new ideas.
 
-In this project we:
-- Made a model for users.
-- Made a model for posts.
-- Made authentications for their inputs.
-- Made associations between the user and the post model.
+In this project I:
+
+- Made a model for users, articles, votes and categories.
+- Made Simplified login -using only name-.
+- Made Home page viewing latest articles, randomly chosen articles and the most popular article in the site.
+- Made article creating page.
+- Made article show page.
+- Made testing for models.
+- Made validations for all user inputs.
+
 
 ## Usage
 
-- Clone the repo "https://github.com/Mohamed-js/sportive.git".
+- Clone the repo to your PC by: "git clone https://github.com/Mohamed-js/sportive.git"
 - Write "rails s"
-- Start .
-
+- Start your localhost on 3000 port in your browser: "http://127.0.0.1:3000"
+- Login, create articles and vote for articles!
 
 ## Technologies
 
