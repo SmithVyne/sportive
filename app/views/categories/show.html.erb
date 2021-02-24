@@ -1,14 +1,76 @@
-<p id="notice"><%= notice %></p>
+<div class="  h-100">
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+<% reverse = true %>
+<% @articles.each_slice(2) do |article1, article2| %>
 
-<p>
-  <strong>Priority:</strong>
-  <%= @category.priority %>
-</p>
+  <% if reverse %>
+    <div class="row vertical-card">
+      <div class="col-6">
+        <div class="row">
+          <div class="col-6">
+            <%= image_tag "#{article1.image.downcase}", class:"cover-img" %>
+          </div>
+          <div class="col-6 p-3">
+            <h3 class="my-card-catt"><%= @category.name.capitalize %></h3>
+            <strong><h4><%=article1.title%> </h4></strong>
+            <p class="text-wrap"><%=article1.text%></p>
+          </div>
+        </div>
+      </div>
+      <% if !article2.nil? %>
+      <div class="col-6">
+        <div class="row">
+          <div class="col-6">
+            <%= image_tag "#{article2.image.downcase}", class:"cover-img" %>
+          </div>
+          <div class="col-6 p-3">
+            <h3 class="my-card-catt"><%= @category.name.capitalize %></h3>
+            <strong><h4><%=article2.title%></h4></strong>
+            <p class="text-wrap"><%=article2.text%></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+  </div>
+  <% reverse = false %>
+  <% else %>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+    <div class="row vertical-card">
+      <div class="col-6">
+        <div class="row">
+          <div class="col-6 p-3">
+            <h3 class="my-card-catt"><%= @category.name.capitalize %></h3>
+            <strong><h4><%=article1.title%> </h4></strong>
+            <p class="text-wrap"><%=article1.text%></p>
+          </div>
+          <div class="col-6">
+            <%= image_tag "#{article1.image.downcase}", class:"cover-img" %>
+          </div>
+        </div>
+      </div>
+      <% if !article2.nil? %>
+      <div class="col-6">
+        <div class="row">
+          <div class="col-6 p-3">
+            <h3 class="my-card-catt"><%= @category.name.capitalize %></h3>
+            <strong><h4><%=article2.title%> </h4></strong>
+            <p class="text-wrap"><%=article2.text%></p>
+          </div>
+          <div class="col-6">
+            <%= image_tag "#{article2.image.downcase}", class:"cover-img" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% reverse = true %>
+  <% end %>
+<% end %>
+</div>
+
+
+
+
+
+
+

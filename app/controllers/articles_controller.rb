@@ -3,8 +3,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all.order(priority: "desc")
-    @categories = Category.all.order(priority: "asc").limit(4)
+    @categories = Category.all.order(priority: "asc")
+    # @top_article = Vote.all.order()
   end
 
   # GET /articles/1 or /articles/1.json

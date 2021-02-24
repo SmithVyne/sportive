@@ -1,5 +1,6 @@
-<div class="cover ">
-    <%= image_tag "messi", class:'cover-img' %>
+<div class="cover">
+    <%= image_tag "stadium1", class:'cover-img' %>
+    <div class="cover-gradient"></div>
     <div class="cover-text p-3">
         <h3 class="orange">There is some header stuff here</h3>
         <p>lorem ibsum uadsfkh dsakjfasdlofiuy a aoilusd laosiud </p>
@@ -8,13 +9,20 @@
 
 <div class="cards-holder d-flex flex-row">
     <% @categories.each do |cat| %>
+    <% if !cat.articles.last.nil? %>
       <div class="my-card ">
+
+      <%= link_to article_path(cat.articles.last.id) do %>
           <%= image_tag "#{cat.articles.last.image.downcase}", class:'cover-img' %>
+          <div class="cover-gradient"></div>
           <div class="my-card-text p-3">
-              <h3 class="my-card-cat"><%= cat.name %></h3>
-              <h4><%= cat.articles.last.text %></h4>
+              <h3 class="my-card-cat"><%= cat.name.capitalize %></h3>
+              <h4><%= cat.articles.last.title %></h4>
           </div>
+      <% end %> 
+      
       </div>
+    <% end %>    
     <% end %>
 </div>
 
@@ -23,12 +31,11 @@
 <div class="container-fluid m-0 p-3 w-100">
   <nav class="navbar navbar-expand-lg p-0">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item main">
-              <strong><%= link_to 'HOME', articles_path, class: "nav-link active white" %></strong>
-          </li>
+      <% @categories.each do |cat| %>
           <li class="nav-item">
-              <strong><%= link_to 'NEW ARTICLE', new_article_path, class: "nav-link white" %></strong>
+              <strong><%= link_to cat.name.upcase, category_path(cat.id), class: "nav-link active white" %></strong>
           </li>
+      <% end %>    
       </ul>
   </nav>
 
@@ -42,60 +49,4 @@
   </div>
 </div>
 
-<div class="row vertical-card">
-  <div class="col-6">
-    <div class="row">
-      <div class="col-6">
-        <%= image_tag "image", class:"cover-img" %>
-      </div>
-      <div class="col-6 p-3">
-        <h3 class="my-card-catt">There</h3>
-        <strong><h4>lorem ibsum uadsfkh dsakjfasdlofiuy a aoilusd laosiud </h4></strong>
-        <p>lorem ibsum uadsfkh dsakjfasdlofiuy a aoilusd laosiud lorem ibsum uadsfkh dsakjfasdlofiuy a aoilusd laosiud</p>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-6">
-    <div class="row">
-      <div class="col-6">
-        <%= image_tag "image", class:"cover-img" %>
-      </div>
-      <div class="col-6 p-3">
-        <h3 class="my-card-catt">There</h3>
-        <strong><h4>lorem ibsum uadsfkh dsakjfasdlofiuy a aoilusd laosiud </h4></strong>
-        <p>lorem ibsum uadsfkh dsakjfasdlofiuy a aoilusd laosiud lorem ibsum uadsfkh dsakjfasdlofiuy a aoilusd laosiud</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<div class="row vertical-card">
-  <div class="col-6">
-    <div class="row">
-      <div class="col-6 p-3">
-        <h3 class="my-card-catt">There</h3>
-        <strong><h4>lorem ibsum uadsfkh dsakjfasdlofiuy a aoilusd laosiud </h4></strong>
-        <p>lorem ibsum uadsfkh dsakjfasdlofiuy a aoilusd laosiud lorem ibsum uadsfkh dsakjfasdlofiuy a aoilusd laosiud</p>
-      </div>
-      <div class="col-6">
-        <%= image_tag "image", class:"cover-img" %>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-6">
-    <div class="row">
-      <div class="col-6 p-3">
-        <h3 class="my-card-catt">There</h3>
-        <strong><h4>lorem ibsum uadsfkh dsakjfasdlofiuy a aoilusd laosiud </h4></strong>
-        <p>lorem ibsum uadsfkh dsakjfasdlofiuy a aoilusd laosiud lorem ibsum uadsfkh dsakjfasdlofiuy a aoilusd laosiud</p>
-      </div>
-      <div class="col-6">
-        <%= image_tag "image", class:"cover-img" %>
-      </div>
-    </div>
-  </div>
-</div>
