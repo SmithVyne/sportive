@@ -77,8 +77,24 @@ a.orange {
     width: fit-content;
 }
 
+.my-card-text h4 {
+    width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .my-card-cat {
+    display: inline-block;
+    width: fit-content;
     border-bottom: #ffff01 3px solid;
+}
+
+.my-card-catt {
+    display: inline-block;
+    width: fit-content;
+    border-bottom: #f76108 3px solid;
+    color: #f76108;
 }
 
 .bottombar {
@@ -90,5 +106,31 @@ a.orange {
 }
 
 .vid {
-    height: 400px;
+    height: 500px;
+    max-width: 1000px;
+}
+
+.vertical-card {
+    height: 250px;
+    background-color: white;
+    width: 100%;
+    position: relative;
+    left: 12px;
+}
+
+.vertical-card .col-6 {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.vertical-card .row {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.h-100 {
+    height: calc(100vh - 150px)!important;
 }

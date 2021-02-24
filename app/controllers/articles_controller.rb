@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.all.order(priority: "desc")
+    @categories = Category.all.order(priority: "asc").limit(4)
   end
 
   # GET /articles/1 or /articles/1.json
@@ -13,6 +14,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    @categories = Category.all
   end
 
   # GET /articles/1/edit
@@ -21,12 +23,13 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
-    @article = Article.new(article_params)
+    u = User.find(session[:current_user]["id"])
+    @article = u.articles.build(article_params)
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: "Article was successfully created." }
-        format.json { render :show, status: :created, location: @article }
+        format.html { redirect_to articles_path, notice: "Article was successfully created." }
+        format.json { render :show, status: :created, location: articles_path }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @article.errors, status: :unprocessable_entity }
