@@ -9,10 +9,10 @@ class ArticlesController < ApplicationController
     count_id_key = Vote.group(:article_id).count.map { |art| [art[1], art[0]] }
 
     top_id = count_id_key.select { |key_id_pair| key_id_pair[0] == top_count }
-
-    @top_article = Article.find(top_id[0][1])
-
-    @random_article = Article.find(rand(1..Article.all.count))
+    if !top_id[0].nil?
+      @top_article = Article.find(top_id[0][1])
+      @random_article = Article.find(rand(1..Article.all.count))
+    end
   end
 
   # GET /articles/1 or /articles/1.json

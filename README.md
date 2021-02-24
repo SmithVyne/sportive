@@ -2,6 +2,19 @@
 
 View articles, categories, create articles and vote them up!
 
+
+![screenshot](screenshot.png)
+
+
+## Presentation
+- [Presentation video](https://www.loom.com/share/1bc51aabb4934e97ab2a1290abb45542)
+
+
+## Live demo
+- [Live demo]()
+
+
+
 ## About
 
 This project is a simple article creation web.
@@ -34,7 +47,7 @@ In this project I:
 - VSCode
 - Bootstrap
 
-## Authors
+## Author
 
 👤 **Mohamed Atef**
 

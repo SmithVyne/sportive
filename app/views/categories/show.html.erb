@@ -8,7 +8,9 @@
       <div class="col-6">
         <div class="row">
           <div class="col-6">
+            <%= link_to article_path(article1.id) do %>
             <%= image_tag "#{article1.image.downcase}", class:"cover-img" %>
+            <% end %>
           </div>
           <div class="col-6 p-3">
             <h3 class="my-card-catt"><%= @category.name.capitalize %></h3>
@@ -28,7 +30,9 @@
       <div class="col-6">
         <div class="row">
           <div class="col-6">
+            <%= link_to article_path(article2.id) do %>
             <%= image_tag "#{article2.image.downcase}", class:"cover-img" %>
+            <% end %>
           </div>
           <div class="col-6 p-3">
             <h3 class="my-card-catt"><%= @category.name.capitalize %></h3>
@@ -65,7 +69,9 @@
             <% end %>
           </div>
           <div class="col-6">
+            <%= link_to article_path(article1.id) do %>
             <%= image_tag "#{article1.image.downcase}", class:"cover-img" %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -85,7 +91,9 @@
             <% end %>
           </div>
           <div class="col-6">
+            <%= link_to article_path(article2.id) do %>
             <%= image_tag "#{article2.image.downcase}", class:"cover-img" %>
+            <% end %>
           </div>
         </div>
       </div>
