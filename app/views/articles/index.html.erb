@@ -42,17 +42,16 @@
   </nav>
 
   <div class="row p-2">
-    <div class="col-8 vid">
+    <div class="col-8 vid position-relative">
       <%= image_tag "#{@random_article.image.downcase}", class:"cover-img" %>
+      <span class="choose">WE PICKED YOU</span>
     </div>
     <div class="col-4 d-flex flex-column justify-content-center">
       <h2 class="white"><%=@random_article.title.upcase %></h2>
       <h2 class="orange">BY: <%= @random_article.author.name.upcase %></h2>
       <h5 class="white">
-        <%= @random_article.text %>
+        <%= @random_article.text.capitalize %>
       </h5>
     </div>
   </div>
 </div><br><br><br>
-
-

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :set_user, only: %i[show edit update destroy]
 
   # GET /users or /users.json
   def index
@@ -7,8 +7,7 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1 or /users/1.json
-  def show
-  end
+  def show; end
 
   # GET /users/new
   def new
@@ -16,23 +15,22 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
 
-    if u = User.find_by(name: "#{@user.name}")
+    if u = User.find_by(name: @user.name.to_s)
       session[:current_user] = u
       redirect_to articles_path
-      
+
     else
       respond_to do |format|
         if @user.save
-          u = User.find_by(name: "#{@user.name}")
+          u = User.find_by(name: @user.name.to_s)
           session[:current_user] = u
-          format.html { redirect_to articles_path, notice: "User was successfully created." }
+          format.html { redirect_to articles_path, notice: 'User was successfully created.' }
           format.json { render :show, status: :created, location: articles_path }
         else
           format.html { render :new, status: :unprocessable_entity }
@@ -41,8 +39,6 @@ class UsersController < ApplicationController
       end
     end
   end
-
-
 
   def logout
     session[:current_user] = nil
@@ -53,19 +49,20 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(session[:current_user_id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(session[:current_user_id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def user_params
+    params.require(:user).permit(:name)
+  end
 end

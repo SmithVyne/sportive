@@ -236,3 +236,13 @@ a.orange {
         
     }
 }
+
+
+.choose {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    padding: 10px;
+    font-weight: 800;
+    background-color: #ffff01;
+}
