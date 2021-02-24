@@ -27,8 +27,8 @@ In this project I:
 
 - Made a model for users, articles, votes and categories.
 - Made Simplified login -using only name-.
-- Made Home page viewing latest articles, randomly chosen articles and the most popular article in the site.
-- Made article creating page.
+- Made Home page viewing latest articles, randomly chosen articles and the most popular article on the site.
+- Made article-creating page.
 - Made article show page.
 - Made testing for models.
 - Made validations for all user inputs.
