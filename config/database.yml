@@ -18,3 +18,4 @@ production:
   database: sportive_production
   username: username
   password: <%= ENV['PROJECT_DATABASE_PASSWORD'] %>
+  

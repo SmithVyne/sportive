@@ -36,18 +36,19 @@ In this project I:
 
 ## Usage
 
-- Clone the repo to your PC by: "git clone https://github.com/Mohamed-js/sportive.git"
+- run "git clone https://github.com/Mohamed-js/sportive.git"
 - run "bundle install"
 - run "rails db:migrate"
 - run "rails db:seed"
 - run "rails s"
 - Start your localhost on 3000 port in your browser: "http://127.0.0.1:3000"
-- Login, create articles and vote for articles!
+- Register with name, create articles and vote for articles!
 
 ## Technologies
 
 - Ruby
 - Rails
+- RSpec 
 - PostgreSQL
 - VSCode
 - Bootstrap

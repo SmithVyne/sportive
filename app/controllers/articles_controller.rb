@@ -4,31 +4,21 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @categories = Category.all.order(priority: 'asc')
-
-    top_count = Vote.group(:article_id).count.map { |art| art[1] }.sort.max
-    count_id_key = Vote.group(:article_id).count.map { |art| [art[1], art[0]] }
-
-    top_id = count_id_key.select { |key_id_pair| key_id_pair[0] == top_count }
-    unless top_id[0].nil?
-      @top_article = Article.find(top_id[0][1])
-      @random_article = Article.find(rand(1..Article.all.count))
-    end
+    @categories = Category.all_asc
+    @random_article = Article.random
+    @top_article = Vote.top_art
   end
 
   # GET /articles/1 or /articles/1.json
   def show
     @id = params[:id]
-    @votee = Vote.where(['user_id = ? AND article_id = ?', (session[:current_user]['id']).to_s, @id.to_s])
+    @votee = exist?
   end
 
   # GET /articles/new
   def new
     @article = Article.new
   end
-
-  # GET /articles/1/edit
-  def edit; end
 
   # POST /articles or /articles.json
   def create
@@ -82,5 +72,9 @@ class ArticlesController < ApplicationController
 
   def verify_user
       redirect_to root_path unless !session[:current_user].nil?
+  end
+
+  def exist?
+    Vote.where(['user_id = ? AND article_id = ?', (session[:current_user]['id']).to_s, @id.to_s])
   end
 end
