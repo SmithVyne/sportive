@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
-
+  before_action :verify_user
   # GET /categories or /categories.json
   def index
     @categories = Category.all
@@ -66,5 +66,9 @@ class CategoriesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def category_params
     params.require(:category).permit(:name, :priority)
+  end
+
+  def verify_user
+    redirect_to root_path unless !session[:current_user].nil?
   end
 end
