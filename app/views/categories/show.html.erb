@@ -1,4 +1,4 @@
-<div class="  h-100">
+<div class="h-100">
 
 <% reverse = true %>
 <% @articles.each_slice(2) do |article1, article2| %>
@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col-6">
             <%= link_to article_path(article1.id) do %>
-            <%= image_tag "#{article1.image.downcase}", class:"cover-img" %>
+            <%= image_tag "#{article1.image.downcase}", class:"cover-img full" %>
             <% end %>
           </div>
           <div class="col-6 p-3">
@@ -26,7 +26,7 @@
         <div class="row">
           <div class="col-6">
             <%= link_to article_path(article2.id) do %>
-            <%= image_tag "#{article2.image.downcase}", class:"cover-img" %>
+            <%= image_tag "#{article2.image.downcase}", class:"cover-img full" %>
             <% end %>
           </div>
           <div class="col-6 p-3">
@@ -55,7 +55,7 @@
           </div>
           <div class="col-6">
             <%= link_to article_path(article1.id) do %>
-            <%= image_tag "#{article1.image.downcase}", class:"cover-img" %>
+            <%= image_tag "#{article1.image.downcase}", class:"cover-img full" %>
             <% end %>
           </div>
         </div>
@@ -72,7 +72,7 @@
           </div>
           <div class="col-6">
             <%= link_to article_path(article2.id) do %>
-            <%= image_tag "#{article2.image.downcase}", class:"cover-img" %>
+            <%= image_tag "#{article2.image.downcase}", class:"cover-img full" %>
             <% end %>
           </div>
         </div>
