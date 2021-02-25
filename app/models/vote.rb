@@ -23,10 +23,6 @@ class Vote < ApplicationRecord
     unless top_id[0].nil?
       @top_article = Article.find(top_id[0][1])
       @top_article
-    else
-      nil
     end
   end
-
-  
 end

@@ -14,9 +14,7 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
-    # rubocop:disable Lint/AssignmentInCondition
     if u = User.find_by(name: @user.name.to_s)
-      # rubocop:enable Lint/AssignmentInCondition
       session[:current_user] = u
       redirect_to articles_path
 

@@ -1,5 +1,4 @@
 class VotesController < ApplicationController
-
   # POST /votes or /votes.json
   def vote_up
     u = User.find(session[:current_user]['id'])

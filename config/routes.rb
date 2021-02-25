@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :categories, only: [:new, :create, :show]
-  resources :articles, only: [:index, :show, :new, :create]
-  resources :users, only: [:new, :index, :create]
+  resources :categories, only: %i[new create show]
+  resources :articles, only: %i[index show new create]
+  resources :users, only: %i[new index create]
   root 'users#new'
   post '/users/logout', to: 'users#logout'
   get '/votes/vote_up/:id', to: 'votes#vote_up'

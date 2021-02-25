@@ -13,12 +13,8 @@ class Article < ApplicationRecord
   def self.all_arts
     Article.all
   end
-  
+
   def self.random
     Article.find(rand(1..Article.all.count))
   end
-  
-
-
-
 end

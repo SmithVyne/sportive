@@ -7,8 +7,6 @@ class CategoriesController < ApplicationController
     @articles = @category.articles.includes(:votes).includes(:author).order(created_at: 'DESC')
   end
 
-  
-  
   # includes(:votes).order(created_at: 'DESC')
   # .where(votes: ["votes.user_id = ?", "#{session[:current_user]["id"]}"])
   # GET /categories/new
@@ -39,14 +37,6 @@ class CategoriesController < ApplicationController
   end
 
   def verify_user
-    redirect_to root_path unless !session[:current_user].nil?
+    redirect_to root_path if session[:current_user].nil?
   end
-
-  def voted?(user,art)
-    if art.votes.select {|x| x.user_id == user}.empty?
-      
-    else
-      '<p class="btn btn-secondary">Voted</p>'
-    end
-  end 
 end

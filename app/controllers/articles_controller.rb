@@ -71,7 +71,7 @@ class ArticlesController < ApplicationController
   end
 
   def verify_user
-      redirect_to root_path unless !session[:current_user].nil?
+    redirect_to root_path if session[:current_user].nil?
   end
 
   def exist?
