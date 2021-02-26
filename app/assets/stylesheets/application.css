@@ -30,6 +30,10 @@ a.orange {
     height: 100%;
 }
 
+.cards-holder {
+    overflow: hidden;
+}
+
 .padding-right {
     padding-right: 40px;
     font-size: 30px;
