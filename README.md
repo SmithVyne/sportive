@@ -9,7 +9,7 @@ View articles, categories, create articles and vote them up!
 ![screenshot](tests.png)
 
 ## Presentation
-- [Presentation video](https://www.loom.com/share/1bc51aabb4934e97ab2a1290abb45542)
+- [Presentation video](https://www.loom.com/share/66631e90af974f5cab63dce100b3aaf3)
 
 
 ## Live demo
