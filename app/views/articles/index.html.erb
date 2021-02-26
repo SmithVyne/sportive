@@ -1,4 +1,4 @@
-
+<% if !@top_article.nil? %>
 <div class="cover">
     <%= link_to article_path(@top_article.id) do %>
       <%= image_tag @top_article.image.downcase, class:'cover-img full' %>
@@ -9,7 +9,7 @@
       </div>
     <% end %>
 </div>
-
+<% end %>
 <div class="cards-holder d-flex flex-row">
     <% @categories.each do |cat| %>
     <% if !cat.articles.last.nil? %>

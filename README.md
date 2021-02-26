@@ -39,6 +39,7 @@ In this project I:
 - run "git clone https://github.com/Mohamed-js/sportive.git"
 - run "bundle install"
 - run "rails db:migrate"
+- run "rails db:seed"
 - run "rails s"
 - IF NOT STARTED RUN "bundle exec rake webpacker:install" 
 - Start your localhost on 3000 port in your browser: "http://127.0.0.1:3000"
