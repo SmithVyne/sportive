@@ -8,7 +8,7 @@ class Category < ApplicationRecord
   # Helpers
 
   def self.all_asc
-    Category.all.order(priority: 'asc')
+    Category.includes(:articles).order(priority: 'asc')
   end
 
   def self.voted(user, art)
